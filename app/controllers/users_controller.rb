@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.new(user_params)
 
-    if @cocktail.save
-      redirect_to @cocktail, notice: 'Cocktail was successfully created.'
+    if @user.save
+      redirect_to @user, notice: 'User was successfully created.'
     else
       render :new
     end
