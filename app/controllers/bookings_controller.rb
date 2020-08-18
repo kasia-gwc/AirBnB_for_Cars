@@ -13,9 +13,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Bookings.new(booking_params)
-
     if @booking.save
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to @booking, notice: 'Booking was successfully created'
     else
       render :new
     end
@@ -27,8 +26,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to task_path(@booking)
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking), notice: 'Booking was updated'
+    else
+      render :edit
+    end
   end
 
   def destroy
