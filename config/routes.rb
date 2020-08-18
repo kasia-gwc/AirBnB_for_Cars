@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   resources :listings do
     resources :booking, only: %i[new create]
-    resources :user, only: :show
   end
-  resources :bookings, only: %i[index show edit update destroy] do
-    resources :user, only: :show
-  end
+
+  resources :bookings, only: %i[index show edit update destroy]
 end
