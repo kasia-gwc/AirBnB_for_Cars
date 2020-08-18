@@ -7,8 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+user = User.create!(email: "blabla@blsabla.com", first_name: "jeroen", last_name: "zwart", password: "abcdef")
+
 10.times do
-  Listing.create(
+  Listing.create!(
+    user: user,
     vehicle_type: Faker::Vehicle.make,
     name: Faker::Name.unique.name,
     description: "This is a really fucking awesome machine, fit for at least 100 people and liters of booze",
@@ -20,3 +23,4 @@ require 'faker'
     end_date: Faker::Date.between(from: 1.year.from_now, to: 2.year.from_now)
     )
 end
+
