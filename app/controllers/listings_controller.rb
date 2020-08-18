@@ -2,4 +2,45 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
   end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def new
+    @listing = Listing.new
+  end
+
+  def create
+    @listing = Listing.new(listing_params)
+  end
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    if listing.update(listing_params)
+      redirect_to listing_path(@listing), notice: 'Listing was updated'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    redirect_to listing_path, notice: 'Listing was removed'
+  end
+
+  private
+
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  def listing_params
+    params.require(:listing).permit(:vehicle_type, :name, :location, :start_date, :end_date)
+  end
 end
