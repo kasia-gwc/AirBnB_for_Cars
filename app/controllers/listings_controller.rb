@@ -39,6 +39,10 @@ class ListingsController < ApplicationController
     redirect_to listing_path, notice: 'Listing was removed'
   end
 
+  def my_listings
+    @listings = Listing.all.select { |listing| listing.user == current_user }
+  end
+
   private
 
   def set_listing
