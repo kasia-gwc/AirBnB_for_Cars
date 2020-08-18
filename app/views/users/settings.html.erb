@@ -1,7 +1,7 @@
 <% yield %>
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-
+<%= link_to "Edit Profile", edit_user_password_path %>
 
 <% yield %>
 <%= render "../views/footer" %>
