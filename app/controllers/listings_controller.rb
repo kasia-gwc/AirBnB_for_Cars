@@ -13,6 +13,11 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    if Listing.save
+      redirect_to @listing, notice: 'Listing was succesfully created'
+    else
+      render :new
+    end
   end
 
   def edit
