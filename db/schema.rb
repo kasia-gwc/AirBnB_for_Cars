@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_124831) do
+ActiveRecord::Schema.define(version: 2020_08_18_133212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_124831) do
     t.string "city"
     t.integer "price"
     t.text "description"
+    t.string "country"
   end
 
   create_table "reviews", force: :cascade do |t|
