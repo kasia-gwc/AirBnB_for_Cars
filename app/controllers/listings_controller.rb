@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
-    if Listing.save
+    if @listing.save
       redirect_to @listing, notice: 'Listing was succesfully created'
     else
       render :new
@@ -26,7 +26,7 @@ class ListingsController < ApplicationController
 
   def update
     @listing = Listing.find(params[:id])
-    if listing.update(listing_params)
+    if @listing.update(listing_params)
       redirect_to listing_path(@listing), notice: 'Listing was updated'
     else
       render :edit
