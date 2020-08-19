@@ -6,8 +6,19 @@
 <h1>cool  index stuff</h1>
 <p>YESYESYESYESYESYESYESYESYESYESYESYESYESYESYESYES</p>
 
-
-
+<ul>
+  <% @listings.each do |listing| %>
+    <li><%= link_to "Show more", listing_path(listing) %></li>
+    <%= listing.vehicle_type + " |" %>
+    <%= listing.name + " |" %>
+    <%= listing.price %>
+    <%= listing.city + " |" %>
+    <%= listing.country %>
+    <% if listing.photo.attached? %>
+      <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <% end %>
+</ul>
 
 <% yield %>
 <%= render "../views/footer" %>
