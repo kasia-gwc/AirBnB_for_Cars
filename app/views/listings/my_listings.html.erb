@@ -43,7 +43,6 @@
   <%= render "footer" %>
 </div>
 
-<% yield %>
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 <div class="container">
@@ -70,5 +69,4 @@
 
 
 
-<% yield %>
 <%= render "../views/footer" %>
