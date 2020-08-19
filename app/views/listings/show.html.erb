@@ -1,7 +1,7 @@
-<% yield %>
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 <div class="container">
   <div class="d-flex">
@@ -36,6 +36,4 @@
 
 
 
-
-<% yield %>
 <%= render "../views/footer" %>

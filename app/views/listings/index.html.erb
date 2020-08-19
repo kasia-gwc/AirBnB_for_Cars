@@ -1,13 +1,25 @@
-<% yield %>
-<%= render "../views/navbar_loggedin" %>
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 
+<div class="container-fluid card-container d-flex justify-content-center flex-wrap">
+  <% @listings.each do |listing| %>
+    <a class="card col-5 mx-2 px-0 my-2 border-0" style="text-decoration:none" href="<%= listing_path(listing) %>">
+      <img class="card-img-top" src="<%= cl_image_path listing.photo.key %>">
+      <div class="card-infos mx-2">
+        <div class="row justify-content-between mt-2 mx-1">
+          <h2><%= listing.name %></h2>
+          <div class="row justify-content-between mx-1">
+            <h3 class="mx-1">$70</h3>
+            <h4>per day</h4>
+          </div>
+        </div>
+        <div class="row justify-content-between mx-1">
+          <h5><em><%= listing.city %>, <%= listing.country %></em></h5>
+        </div>
+        <p class="mx-1"><%= listing.description %></p>
+      </div>
+    </a>
+  <% end %>
+</div>
 
-<h1>cool  index stuff</h1>
-<p>YESYESYESYESYESYESYESYESYESYESYESYESYESYESYESYES</p>
-
-
-
-
-<% yield %>
 <%= render "../views/footer" %>
