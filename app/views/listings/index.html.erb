@@ -1,5 +1,5 @@
 <% yield %>
-<%= render "../views/navbar_loggedin" %>
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 
 

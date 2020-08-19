@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
   end
 
   def show
