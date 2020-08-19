@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require "open-uri"
 
-user = User.create!(email: "blabla@blsabla.com", first_name: "jeroen", last_name: "zwart", password: "abcdef")
+user = User.create!(email: "blabla@blsbsslaabla.com", first_name: "jeroen", last_name: "zwart", password: "abcdef")
 
 10.times do
-  Listing.create!(
+  file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+  listing = Listing.create!(
     user: user,
     vehicle_type: Faker::Vehicle.make,
     name: Faker::Name.unique.name,
@@ -22,5 +24,6 @@ user = User.create!(email: "blabla@blsabla.com", first_name: "jeroen", last_name
     start_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
     end_date: Faker::Date.between(from: 1.year.from_now, to: 2.year.from_now)
     )
+  listing.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  listing.save
 end
-
