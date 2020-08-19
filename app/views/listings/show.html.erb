@@ -19,7 +19,7 @@
               <p><%= @listing.city %></p>
             </div>
           </div>
-          <h2 class="card-trip-pricing"><%= @listing.price %></h2>
+          <h2 class="card-trip-pricing"><%= @listing.price %>€</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
@@ -27,7 +27,7 @@
     <div class="availability mt-4 d-flex flex-column align-items-center">
     <h2 class="mb-3">Available Dates</h2>
     <img src="https://www.tottington.bury.sch.uk/wp-content/uploads/term-dates-post-header.jpg" alt="datepic">
-    <%= link_to "Book Listing", new_listing_booking_path(@listing), class: "btn btn-gradient mt-5" %> <p>€</p>
+    <%= link_to "Book Listing", new_listing_booking_path(@listing), class: "btn btn-gradient mt-5" %>
     </div>
   </div>
 </div>
