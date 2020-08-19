@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- navbar -->
 
 <div class="card-listing">
@@ -11,3 +12,37 @@
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
+=======
+<% yield %>
+<%= render "../views/navbar_loggedin" %>
+
+<div class="container">
+  <div class="content">
+    <div class="listings">
+      <div class="listing" style="background-image: url(https://picsum.photos/seed/picsum/200/300)">
+          WEhicle
+      </div>
+      <div class="listing-description">
+        <h1>A few words about your vehicle</h1>
+        <p>Very nice description of the listing bla bla bla</p>
+      </div>
+    </div>
+    <div class="listing-details">
+      <div class="availability">
+      <%= render "../views/bookings/new" %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<% yield %>
+<%= render "../views/footer" %>
+
+>>>>>>> master

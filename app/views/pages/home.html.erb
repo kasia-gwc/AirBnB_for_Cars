@@ -1,33 +1,10 @@
+<% yield %>
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex">
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="d-flex align-items-center">
-    <a class="navbar-brand" href="#">
-    <img  src="https://image.flaticon.com/icons/svg/610/610290.svg" />
-</a>
-  <h2 class="mr-3 pb-0">WEhicle</h2> <a class="mr-3" href="">My Listings</a> <a class="mr-3" href="">Profile</a>
-  </div>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="btn btn-ghost mr-3" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-gradient mr-3" href="#">Register</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
-    </ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1529313779164-31ef6a34524f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+  <div class="container">
+    <h1>WEhicles for <strong>awesome people</strong> with <strong>awesomeness</strong>!</h1>
+    <p>Enjoy an experience that you didn't dare to dream about</p>
   </div>
 </div>
 
@@ -39,28 +16,6 @@
 
 
 
+<% yield %>
+<%= render "../views/footer" %>
 
-<div class="footer mt-3">
-  <div class="d-flex justify-content-between pt-5 mb-3 border-bottom pb-5 align-items-center">
-    <div class="d-flex col-4 pb-0 justify-content-center align-items-center">
-      <h3 class="mr-3">Mobile App</h3> <h3 class="mr-3">Community</h3> <h3>Company</h3>
-    </div>
-    <div class="d-flex col-4 justify-content-center align-items-center pb-0">
-      <img  src="https://image.flaticon.com/icons/svg/610/610290.svg" /> <h2 class="ml-2">WEhicle</h2>
-    </div>
-    <div class="d-flex col-4 justify-content-center align-items-center pb-0">
-      <h3 class="mr-3">Help Desk</h3> <h3 class="mr-3">Blog</h3> <h3>Ressources</h3>
-    </div>
-  </div>
-  <div class="d-flex justify-content-center mt-5">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </div>
-  <div class="footer-copyright">
-  </div>
-</div>
