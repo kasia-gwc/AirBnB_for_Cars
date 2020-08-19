@@ -1,40 +1,38 @@
-<!-- navbar -->
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<div class="card-listing">
-  <img src="./rocket-listing.jpg" />
-  <div class="card-listing-infos">
-    <div>
-
-      <p>Here are your WEhicles!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
-</div>
 
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
 <div class="container">
-  <div class="content">
-    <div class="listings">
-      <div class="listing" style="background-image: url(https://picsum.photos/seed/picsum/200/300)">
-          WEhicle
-      </div>
-      <div class="listing-description">
-        <h1>A few words about your vehicle</h1>
-        <p>Very nice description of the listing bla bla bla</p>
+  <div class="d-flex">
+    <div>
+      <h1 class="mt-4"><%= @listing.name %></h1>
+      <div class="card-trip mt-2">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div class="d-flex flex-column justify-content-between h-100">
+            <div>
+              <h2><%= @listing.name %> | <%= @listing.vehicle_type %></h2>
+              <p><%= @listing.description %></p>
+            </div>
+            <div>
+              <h2>Where can you find me?</h2>
+              <p><%= @listing.country %></p>
+              <p><%= @listing.city %></p>
+            </div>
+          </div>
+          <h2 class="card-trip-pricing"><%= @listing.price %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
       </div>
     </div>
-    <div class="listing-details">
-      <div class="availability">
-
-
-      </div>
+    <div class="availability mt-4 d-flex flex-column align-items-center">
+    <h2 class="mb-3">Available Dates</h2>
+    <img src="https://www.tottington.bury.sch.uk/wp-content/uploads/term-dates-post-header.jpg" alt="datepic">
+    <%= link_to "Book Listing", new_listing_booking_path(@listing), class: "btn btn-gradient mt-5" %>
     </div>
   </div>
 </div>
-
-
 
 
 
