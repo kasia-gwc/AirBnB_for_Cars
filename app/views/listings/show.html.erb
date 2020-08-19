@@ -1,42 +1,19 @@
-<!-- navbar -->
+<% yield %>
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<div class="card-listing">
-  <img src="./rocket-listing.jpg" />
-  <div class="card-listing-infos">
+
+
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
     <div>
-
-      <p>Here are your WEhicles!</p>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
     </div>
     <h2 class="card-trip-pricing">£99.99</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
-
-<% yield %>
-<%= render "../views/navbar_loggedin" %>
-
-<div class="container">
-  <div class="content">
-    <div class="listings">
-      <div class="listing" style="background-image: url(https://picsum.photos/seed/picsum/200/300)">
-          WEhicle
-      </div>
-      <div class="listing-description">
-        <h1>A few words about your vehicle</h1>
-        <p>Very nice description of the listing bla bla bla</p>
-      </div>
-    </div>
-    <div class="listing-details">
-      <div class="availability">
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 
 
 
