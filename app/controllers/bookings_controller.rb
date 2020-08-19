@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @dose = Dose.new
+    @booking = Booking.find(params[:id])
   end
 
   def new
