@@ -21,6 +21,7 @@ user = User.create!(email: "blabla@blsbsslaabla.com", first_name: "jeroen", last
     zip: Faker::Address.zip_code,
     city: Faker::Address.city,
     country: Faker::Address.country,
+    price: (1..300).to_a.sample,
     start_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
     end_date: Faker::Date.between(from: 1.year.from_now, to: 2.year.from_now)
     )
