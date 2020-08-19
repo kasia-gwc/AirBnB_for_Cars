@@ -1,18 +1,21 @@
 class BookingsController < ApplicationController
+   before_action :set_listing, only: [:new, :create, :show]
+
   def index
     @bookings = Booking.all.select { |booking| booking.user == current_user }
   end
 
   def show
-    @booking = Bookings.find(params[:id])
+    @dose = Dose.new
   end
 
   def new
-    @booking = Bookings.new
+    @booking = Booking.new
   end
 
   def create
-    @booking = Bookings.new(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.listing = @listing
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created'
     else
@@ -40,6 +43,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_listing
+    @listing = Listing.find(params[:listing_id])
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
