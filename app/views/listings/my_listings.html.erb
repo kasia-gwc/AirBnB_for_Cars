@@ -9,11 +9,15 @@
       <div class="listing-description">
         <h1>A few words about your vehicle</h1>
         <p>Very nice description of the listing bla bla bla</p>
+          <a class="btn btn-gradient" href="#">Update</a>
+          <a class="btn btn-gradient" href="#">Delete</a>
       </div>
     </div>
     <div class="listing-details">
       <div class="availability">
-      <a class="btn btn-gradient" href="#">Book now!</a>
+        <div class="list-inline">
+          <a class="btn btn-success" <%= link_to "Add new vehicle", new_listing_path  %> </a>
+        </div>
       </div>
     </div>
   </div>

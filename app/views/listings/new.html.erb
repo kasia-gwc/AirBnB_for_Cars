@@ -1,17 +1,24 @@
-<h1>Listing#new</h1>
+<div class="container bla">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+    <h1>Add new vehicle!</h1>
+    <p>✨  🛵  🚀  🛺  🛴  🏎  🛵  🚀  🛺  🛴  🏎   ✨</p>
 
-<%= simple_form_for @listing do |f| %>
-<%= f.input :vehicle_type %>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.input :street %>
-<%= f.input :zip %>
-<%= f.input :city %>
-<%= f.input :country %>
-<%= f.input :price %>
-<%= f.input :start_date, as: :date, html5: true %>
-<%= f.input :end_date, as: :date, html5: true %>
-<%= f.input :photo, as: :file %>
-<%= f.submit %>
-<% end %>
+    <%= simple_form_for @listing do |f| %>
+    <%= f.input :vehicle_type %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :street %>
+    <%= f.input :zip %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :price %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
