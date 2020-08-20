@@ -36,8 +36,9 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = current_user
     if @listing.save
-      redirect_to @listing, notice: 'Listing was succesfully created'
+      redirect_to my_listings_show_path(@listing), notice: 'Listing was succesfully created'
     else
       render :new
     end
@@ -59,7 +60,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
-    redirect_to listing_path, notice: 'Listing was removed'
+    redirect_to my_listings_path, notice: 'Listing was removed'
   end
 
   def my_listings
@@ -77,6 +78,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:vehicle_type, :name, :description, :street, :zip, :city, :country, :start_date, :end_date, :price)
+    params.require(:listing).permit(:vehicle_type, :name, :description, :street, :zip, :city, :country, :start_date, :end_date, :price, :photo)
   end
 end
