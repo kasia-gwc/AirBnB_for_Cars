@@ -1,6 +1,10 @@
 class ListingsController < ApplicationController
   def index
-    @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
+    if params[:query].present?
+      @listings = user_signed_in? ? Listing.search_by_vehicle_type_and_name(params[:query]).reject { |listing| listing.user == current_user } : Listing.search_by_vehicle_type_and_name(params[:query])
+    else
+      @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
+    end
   end
 
   def show
