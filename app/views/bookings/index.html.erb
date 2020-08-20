@@ -1,6 +1,6 @@
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<div class="row">
+<div class="row align-items-center">
   <div class="col-lg-8">
     <div class="justify-content-around">
       <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
@@ -27,7 +27,7 @@
     </div>
   </div>
     <div class="col-lg-4">
-      <div class="container text-center mt-5 pr-5">
+      <div class="text-left booking-info">
         <h2>Start date </h2>
           <p><%= booking.listing.start_date %></p>
           <br>
