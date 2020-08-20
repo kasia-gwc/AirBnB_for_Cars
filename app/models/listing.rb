@@ -17,7 +17,7 @@ class Listing < ApplicationRecord
   after_validation :geocode
 
   def address
-    [street, city, country].compact.join(‘, ’)
+    [street, city, country].compact.join(", ")
   end
 
 end
