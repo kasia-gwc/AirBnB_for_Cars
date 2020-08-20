@@ -1,44 +1,44 @@
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<div class="row align-items-center">
-  <div class="col-lg-8">
-    <div class="justify-content-around">
-      <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
-        <% @bookings.each do |booking| %>
-          <a class="card col-7 mx-2 px-0 my-2 border-0" style="text-decoration:none">
-            <img class="card-img-top" src="<%= cl_image_path booking.listing.photo.key %>">
-            <div class="card-infos mx-2">
-              <div class="row justify-content-between mt-2 mx-1">
-                <h2><%= booking.listing.name %></h2>
-                <div class="row justify-content-between mx-1">
-                  <h3 class="mx-1"><%= booking.listing.price %></h3>
-                  <h4>per day</h4>
+<% @bookings.each do |booking| %>
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <div class="justify-content-around">
+        <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
+            <a class="card col-7 mx-2 px-0 my-2 border-0" style="text-decoration:none">
+              <img class="card-img-top" src="<%= cl_image_path booking.listing.photo.key %>">
+              <div class="card-infos mx-2">
+                <div class="row justify-content-between mt-2 mx-1">
+                  <h2><%= booking.listing.name %></h2>
+                  <div class="row justify-content-between mx-1">
+                    <h3 class="mx-1"><%= booking.listing.price %></h3>
+                    <h4>per day</h4>
+                  </div>
                 </div>
+                <div class="row justify-content-between mx-1">
+                  <h5><em><%= booking.listing.city %>, <%= booking.listing.country %></em></h5>
+                </div>
+                <p class="mx-1"><%= booking.listing.description %></p>
               </div>
-              <div class="row justify-content-between mx-1">
-                <h5><em><%= booking.listing.city %>, <%= booking.listing.country %></em></h5>
-              </div>
-              <p class="mx-1"><%= booking.listing.description %></p>
+            </a>
+            <div class="d-flex update-listing flex-column">
             </div>
-          </a>
-          <div class="d-flex update-listing flex-column">
-          </div>
+        </div>
       </div>
     </div>
-  </div>
-    <div class="col-lg-4">
-      <div class="text-left booking-info">
-        <h2>Start date </h2>
-          <p><%= booking.listing.start_date %></p>
-          <br>
-          <h2>End date</h2>
-          <p><%= booking.listing.end_date %></p>
-        <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-gradient" %>
-        <%= link_to 'Delete', booking_path(booking), class: "btn btn-gradient", method: :delete, data: { confirm: 'Are you sure you want to delete this booking?' } %>
+      <div class="col-lg-4">
+        <div class="text-left booking-info">
+          <h2>Start date </h2>
+            <p><%= booking.listing.start_date %></p>
+            <br>
+            <h2>End date</h2>
+            <p><%= booking.listing.end_date %></p>
+          <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-gradient" %>
+          <%= link_to 'Delete', booking_path(booking), class: "btn btn-gradient", method: :delete, data: { confirm: 'Are you sure you want to delete this booking?' } %>
 
+        </div>
       </div>
-    </div>
-        <% end %>
-</div>
+  </div>
+<% end %>
 
 <%= render "../views/footer" %>
