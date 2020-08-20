@@ -44,6 +44,10 @@ class ListingsController < ApplicationController
     @listings = Listing.all.select { |listing| listing.user == current_user }
   end
 
+  def my_listings_show
+    @listing = Listing.find(params[:id])
+  end
+
   private
 
   def set_listing
