@@ -3,10 +3,12 @@
 
 <div class="container">
   <div class="d-flex">
-    <div>
+    <div class="showcarddiv">
       <h1 class="mt-4"><%= @listing.name %></h1>
       <div class="card-trip mt-2">
-        <img src="<%= cl_image_path @listing.photo.key %>">
+        <% if @listing.photo.attached? %>
+          <img class="card-img-top" src="<%= cl_image_path @listing.photo.key %>">
+        <% end %>
         <div class="card-trip-infos">
           <div class="d-flex flex-column justify-content-between h-100">
             <div>
@@ -19,7 +21,7 @@
               <p><%= @listing.city %></p>
             </div>
           </div>
-          <h2 class="card-trip-pricing"><%= @listing.price %>€</h2>
+          <h2 class="card-trip-pricing"><%= @listing.price %>€/day</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
@@ -27,7 +29,16 @@
     <div class="availability mt-4 d-flex flex-column align-items-center">
     <h2 class="mb-3">Available Dates</h2>
     <img src="https://www.tottington.bury.sch.uk/wp-content/uploads/term-dates-post-header.jpg" alt="datepic">
-    <%= link_to "Book Listing", new_listing_booking_path(@listing), class: "btn btn-gradient mt-5" %>
+    <div class="d-flex flex-column text-align-justify mt-3">
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <div id="bookingbtn">
+        <%= f.button :submit, class: "btn btn-gradient text-align-center" %>
+        </div>
+      <% end %>
+    </div>
+
     </div>
   </div>
 </div>

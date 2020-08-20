@@ -3,5 +3,5 @@ class Listing < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
   validates :vehicle_type, :name, :description, :street, :zip, :city, :country, :start_date, :end_date, :price, presence: true
-  validates :description, length: { minimum: 30, too_short: "Please add a more detailed description" }
+  validates :description, length: { minimum: 15, too_short: "Please add a more detailed description" }
 end

@@ -1,3 +1,7 @@
+.showcarddiv {
+  width: 65vw;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -40,4 +44,8 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+#bookingbtn{
+  text-align: center;
 }
