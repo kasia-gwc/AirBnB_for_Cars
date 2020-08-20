@@ -8,7 +8,7 @@
 require 'faker'
 require "open-uri"
 
-user = User.create!(email: "laarrrrrrry@ffiction.com", first_name: "Larry", last_name: "Fiction", password: "abcdef")
+user = User.create!(email: "fictional@larry.com", first_name: "Larry", last_name: "Fiction", password: "abcdef")
 
   file = URI.open('https://images.unsplash.com/photo-1589730962397-a67757425c1c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')
   balloon_one = Listing.create!(
