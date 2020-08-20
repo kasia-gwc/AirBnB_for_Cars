@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   def index
     @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
-    @listings = @listings.geocoded
+    @listings = @listings.geocoded if @listings.present?
 
     @markers = @listings.map do |listing|
       {
