@@ -1,5 +1,14 @@
 class ListingsController < ApplicationController
   def index
+    @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
+    @listings = @listings.geocoded
+
+    @markers = @listings.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { listing: listing })
+      }
     if params[:query].present?
       @listings = user_signed_in? ? Listing.search_by_vehicle_type_and_name(params[:query]).reject { |listing| listing.user == current_user } : Listing.search_by_vehicle_type_and_name(params[:query])
     else
@@ -10,6 +19,13 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @booking = Booking.new
+
+    @markers = [
+      {
+        lat: @listing.latitude,
+        lng: @listing.longitude
+      }
+    ]
   end
 
   def new

@@ -1,0 +1,7 @@
+<h2><%= listing.name %></h2>
+<p><%= listing.city %></p>
+<% if listing.photo.attached? %>
+  <img class="card-img-top" src="<%= cl_image_path listing.photo.key %>">
+  <% end %>
+  <p class="mx-1"><%= listing.price %>€/day</p>
+<%= link_to 'Book now', listing_path(listing), class: "btn btn-gradient" %>
