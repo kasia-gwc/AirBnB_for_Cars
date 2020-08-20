@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to @listing, notice: 'Booking was successfully created'
     else
-      render :new
+      redirect_to @listing, notice: 'A Problem appeared. Are you logged in?'
     end
   end
 
