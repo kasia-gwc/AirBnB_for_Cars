@@ -28,6 +28,16 @@
     <h2 class="mb-3">Available Dates</h2>
     <img src="https://www.tottington.bury.sch.uk/wp-content/uploads/term-dates-post-header.jpg" alt="datepic">
     <%= link_to "Book Listing", new_listing_booking_path(@listing), class: "btn btn-gradient mt-5" %>
+    <div class="d-flex flex-column text-align-justify mt-3">
+      <%= simple_form_for [@listing, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <div id="bookingbtn">
+        <%= f.button :submit, class: "btn btn-gradient text-align-center" %>
+        </div>
+      <% end %>
+    </div>
+
     </div>
   </div>
 </div>
