@@ -1,6 +1,9 @@
 <%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
+
 <div class="container justify-content-around">
-    <a class="btn btn-success m-3 align-items-center" href="<%= new_listing_path  %>" >Add new vehicle</a>
+  <div class="text-center">
+    <a class="btn btn-gradient m-3 align-items-center" href="<%= new_listing_path  %>" >Add new</a>
+  </div>
     <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
       <% @listings.each do |listing| %>
         <a class="card col-7 mx-2 px-0 my-2 border-0" style="text-decoration:none" href="my_listings/<%= listing.id %>">
