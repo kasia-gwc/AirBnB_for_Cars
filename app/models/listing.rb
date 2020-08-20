@@ -16,6 +16,7 @@ class Listing < ApplicationRecord
   geocoded_by :zip
   geocoded_by :city
   geocoded_by :country
+  geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
   # def address
