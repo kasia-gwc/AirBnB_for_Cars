@@ -3,7 +3,7 @@
 
 <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
   <% @listings.each do |listing| %>
-    <a class="card col-5 mx-3 px-4 my-3 border-0" style="text-decoration:none" href="<%= listing_path(listing) %>">
+    <a class="card col-5 mx-3 px-0 my-3 border-0" style="text-decoration:none" href="<%= listing_path(listing) %>">
       <img class="card-img-top" src="<%= cl_image_path listing.photo.key %>">
       <div class="card-infos mx-2">
         <div class="row justify-content-between mt-2 mx-1">
