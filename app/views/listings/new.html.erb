@@ -1,8 +1,11 @@
 <div class="container bla">
+    <%= link_to "Back to my listings", my_listings_path(@listing), class: "btn btn-outline-primary" %>
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
-    <h1>Add new vehicle!</h1>
-    <p>✨  🛵  🚀  🛺  🛴  🏎  🛵  🚀  🛺  🛴  🏎   ✨</p>
+    <div class="col-9 col-lg-6 my-5 text-left">
+    <div class="text-center">
+      <h1>Add a new WEhicle!</h1>
+      <p>✨  🛵  🚀  🛺  🛴  🏎  🛵  🚀  🛺  🛴  🏎   ✨</p>
+    </div>
 
     <%= simple_form_for @listing do |f| %>
       <%= f.input :vehicle_type %>
