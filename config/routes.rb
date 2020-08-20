@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'profile/settings', to:  'users#settings'
 
   resources :listings do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: :create
   end
 
   resources :bookings, only: %i[index show edit update destroy]
