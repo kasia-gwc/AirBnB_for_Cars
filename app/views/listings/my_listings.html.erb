@@ -21,8 +21,8 @@
         </div>
       </a>
       <div class="d-flex update-listing flex-column">
-        <%= link_to 'Update', edit_listing_path(listing), class: "btn btn-gradient" %>
-        <%= link_to 'Delete', listing_path(listing), class: "btn btn-gradient", method: :delete, data: { confirm: 'Are you sure you want to delete this listing?' } %>
+        <%= link_to 'Update', edit_listing_path(listing), class: "btn btn-gradient mt-2" %>
+        <%= link_to 'Delete', listing_path(listing), class: "btn btn-gradient mt-1", method: :delete, data: { confirm: 'Are you sure you want to delete this listing?' } %>
       </div>
     <% end %>
   </div>
