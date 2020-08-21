@@ -5,7 +5,7 @@
     <div class="col-lg-8">
       <div class="justify-content-around">
         <div class="container-fluid card-container d-flex justify-content-center flex-wrap">
-            <a class="card col-7 mx-2 px-0 my-2 border-0" style="text-decoration:none">
+            <a class="card col-7 mx-2 px-0 my-2 border-0" style="text-decoration:none" href="<%= listing_path(booking.listing) %>">
               <img class="card-img-top" src="<%= cl_image_path booking.listing.photo.key %>">
               <div class="card-infos mx-2">
                 <div class="row justify-content-between mt-2 mx-1">
@@ -29,10 +29,9 @@
       <div class="col-lg-4">
         <div class="text-left booking-info">
           <h2>Start date </h2>
-            <p><%= booking.listing.start_date %></p>
-            <br>
+            <p><%= booking.start_date %></p>
             <h2>End date</h2>
-            <p><%= booking.listing.end_date %></p>
+            <p><%= booking.end_date %></p>
           <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-gradient" %>
           <%= link_to 'Delete', booking_path(booking), class: "btn btn-gradient", method: :delete, data: { confirm: 'Are you sure you want to delete this booking?' } %>
 

@@ -180,6 +180,7 @@ user = User.create!(email: "fictional@larry.com", first_name: "Larry", last_name
   ship_one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   ship_one.save!
 
+User.create!(email: "n@r", first_name: "n", last_name: "r", password: "abcdef")
 
 
 
