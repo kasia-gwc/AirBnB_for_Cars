@@ -36,13 +36,10 @@
 }
 
 .btn-gradient-home {
-  color: darkgray;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background:  white;
   transition: background 0.3s ease;
-  border: 1px solid white;
 }
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
