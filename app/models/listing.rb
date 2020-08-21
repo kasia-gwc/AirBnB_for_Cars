@@ -12,7 +12,7 @@ class Listing < ApplicationRecord
 
   validates :vehicle_type, :name, :description, :street, :zip, :city, :country, :start_date, :end_date, :price, presence: true
   validates :description, length: { minimum: 15, too_short: "Please add a more detailed description" }
-  # validate :end_date_after_start_date
+  validate :end_date_after_start_date
 
   geocoded_by :address
   after_validation :geocode
@@ -21,9 +21,9 @@ class Listing < ApplicationRecord
     [street, city, country].compact.join(', ')
   end
 
-  # private
+  private
 
-  # def end_date_after_start_date
-  #   errors.add(:end_date, "must be after the start date") if end_date < start_date
-  # end
+  def end_date_after_start_date
+    errors.add(:end_date, "must be after the start date") if end_date < start_date
+  end
 end
