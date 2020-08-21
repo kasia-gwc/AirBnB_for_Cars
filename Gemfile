@@ -27,6 +27,7 @@ gem 'country_select', '~> 4.0'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
+gem 'jquery-turbolinks'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
