@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   def index
     @listings = user_signed_in? ? Listing.all.reject { |listing| listing.user == current_user } : Listing.all
-    @listings = @listings.geocoded
+    @listings = @listings.geocoded if @listings.present?
 
     @markers = @listings.map do |listing|
       {
@@ -38,7 +38,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user = current_user
     if @listing.save
-      redirect_to my_listings_show_path(@listing), notice: 'Listing was succesfully created'
+      redirect_to my_listings_show_path(@listing), notice: 'Listing was succesfully created 🎊'
     else
       render :new
     end

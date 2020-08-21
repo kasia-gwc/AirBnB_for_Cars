@@ -12,8 +12,10 @@ class Listing < ApplicationRecord
 
   validates :vehicle_type, :name, :description, :street, :zip, :city, :country, :start_date, :end_date, :price, presence: true
   validates :description, length: { minimum: 15, too_short: "Please add a more detailed description" }
+
   geocoded_by :address
   after_validation :geocode
+
 
   def address
     [street, city, country].compact.join(', ')
