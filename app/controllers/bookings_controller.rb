@@ -24,8 +24,9 @@ class BookingsController < ApplicationController
       flash[:notice] = 'Your Booking was successfully created   🚀🚀🚀'
       # render html: "<script>alert('No vv users!')</script>".html_safe
     else
-      redirect_to @listing
-      flash[:notice] = 'A Problem appeared. Are you logged in?'
+      # redirect_to @listing
+      flash[:notice] = 'A Problem appeared. Please check your form or login status'
+      render 'listings/show'
       # render html: "<script>alert('No users!')</script>".html_safe
     end
   end
