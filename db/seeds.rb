@@ -112,7 +112,7 @@ user = User.create!(email: "fictional@larry.com", first_name: "Larry", last_name
   jetski_one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   jetski_one.save!
 
-  file = URI.open('https://images.unsplash.com/photo-1583171233867-f2d302eb8960?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')
+  file = URI.open('https://images.unsplash.com/photo-1474128710184-2a547ec84777?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')
   limo_one = Listing.create!(
     user: user,
     vehicle_type: "Limo",
@@ -163,7 +163,7 @@ user = User.create!(email: "fictional@larry.com", first_name: "Larry", last_name
   rocket_one.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   rocket_one.save!
 
-    file = URI.open('https://images.unsplash.com/photo-1538488076754-0985fd6f3d36?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')
+    file = URI.open('https://images.unsplash.com/photo-1527685609591-44b0aef2400b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9')
   ship_one = Listing.create!(
     user: user,
     vehicle_type: "Sailingship",
