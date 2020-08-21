@@ -5,9 +5,11 @@
   <h1 class="mt-4"><%= @listing.name %></h1>
   <div class="d-flex">
     <div class="showcarddiv">
+      <h1 class="mt-4"><%= @listing.name %></h1>
+      <div class="card-trip mt-2 card-with-img rounded" style="border-radius: 5px;">
       <div class="card-trip">
         <% if @listing.photo.attached? %>
-          <img class="card-img-top" src="<%= cl_image_path @listing.photo.key %>">
+          <img class="card-img-top rounded-top" src="<%= cl_image_path @listing.photo.key %>">
         <% end %>
         <div class="card-trip-infos">
           <div class="d-flex flex-column justify-content-between h-100">
