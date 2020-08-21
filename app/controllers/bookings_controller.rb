@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_listing, only: %i[new create show]
+  before_action :set_listing, only: %i[new create]
 
   def index
     @bookings = Booking.all.select { |booking| booking.user == current_user }
@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: 'Booking was updated'
+      redirect_to bookings_path, notice: 'Booking was updated'
     else
       render :edit
     end
