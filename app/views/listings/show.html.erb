@@ -37,14 +37,15 @@
         <p><%= @listing.start_date %> to <%= @listing.end_date %></p>
       </div>
       <%= simple_form_for [@listing, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.input :start_date, as: :date, html5: true, class: "startdate" %>
+        <%= f.input :end_date, as: :date, html5: true, class: "enddate" %>
+          <div class="pricefield mb-2 font-weight-bold text-center">
+      </div>
         <div id="bookingbtn">
         <%= f.button :submit, class: "btn btn-gradient text-align-center" %>
         </div>
       <% end %>
     </div>
-
     </div>
   </div>
 </div>
