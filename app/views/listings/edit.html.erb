@@ -1,15 +1,25 @@
-<h1>Listing#edit</h1>
+<%= render user_signed_in? ? "../views/navbar_loggedin" : "../views/navbar_notloggedin" %>
 
-<%= simple_form_for @listing do |f| %>
-<%= f.input :vehicle_type %>
-<%= f.input :name %>
-<%= f.input :description %>
-<%= f.input :street %>
-<%= f.input :zip %>
-<%= f.input :city %>
-<%= f.input :country %>
-<%= f.input :price %>
-<%= f.input :start_date, as: :date, html5: true %>
-<%= f.input :end_date, as: :date, html5: true %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-9 col-lg-6 my-5 text-left">
+    <div class="text-center">
+  <h1>Edit my WEhicle</h1>
+    </div>
+  <%= simple_form_for @listing do |f| %>
+  <%= f.input :vehicle_type %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :street %>
+  <%= f.input :zip %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.input :price %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.submit class: "btn btn-gradient" %>
+  <% end %>
+
+    </div>
+  </div>
+</div>
