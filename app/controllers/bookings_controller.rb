@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
-      flash[:notice] = 'Your Booking was successfully created   🚀'
+      flash[:notice] = 'Your Booking was successfully created   🚀🚀🚀'
       # render html: "<script>alert('No vv users!')</script>".html_safe
     else
       redirect_to @listing
